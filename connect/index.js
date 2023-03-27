@@ -158,7 +158,6 @@ mom.ev.on("messages.upsert", async (chatUpdate) => {
   if (!m.message) return
   if (m.key && m.key.remoteJid == "status@broadcast") return
   if (m.key.id.startsWith("BAE5") && m.key.id.length == 16) return
-  console.log(m)
   //if (config.options.autoRead) await mom.readMessages([m.key])
   require("./mom")(mom, m, Commands, chatUpdate)
 })
