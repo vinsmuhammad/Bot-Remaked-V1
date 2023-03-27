@@ -49,7 +49,7 @@ module.exports = async (mom, m, commands, chatUpdate) => {
     const ar = args.map((v) => v.toLowerCase())
     const text = q = args.join(" ")
     const quoted = m.quoted ? m.quoted : m
-    const mime = (quoted.msg || m.msg).mimetype
+    const mime = (quoted.msg || quoted).mimetype
     const isMedia = /image|video|sticker|audio/.test(mime)
     
     try {
@@ -99,7 +99,7 @@ module.exports = async (mom, m, commands, chatUpdate) => {
     }
     
     if (m.message) {
-      console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32m MOM \x1b[1;37m]', time, chalk.green(budy || m.mtype), 'Dari', chalk.blue(pushname), 'Di', chalk.yellow(groupName ? groupName : 'Private Chat' ), 'args :', chalk.white(args.length))
+      console.log('\x1b[1;31m~\x1b[1;37m>', '[\x1b[1;32m MOM \x1b[1;37m]', time, chalk.green(budy || m.type), 'Dari', chalk.blue(pushname), 'Di', chalk.yellow(groupName ? groupName : 'Private Chat' ), 'args :', chalk.white(args.length))
     }
     
     if (cmd.isMedia && !isMedia) {

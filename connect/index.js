@@ -123,6 +123,7 @@ mom.ev.on("connection.update", async(update) => {
   
   if (update.connection == "open" || update.receivedPendingNotifications == "true" ) {
     lolcatjs.fromString(`Berhasil Tersambung Ke ==> Whatsapp Web`)
+    lolcatjs.fromString(`[Connected] ` + JSON.stringify(mom.user, null, 2))
   }
 
   if (connection === 'close') {
@@ -141,7 +142,7 @@ mom.ev.on("connection.update", async(update) => {
 	connect()
     } else if (reason === DisconnectReason.loggedOut) {
 	console.log(`Device Logged Out, Please Scan Again And Run.`);
-	connect();
+//	connect();
 	} else if (reason === DisconnectReason.restartRequired) {
 	console.log("Restart Required, Restarting...");
 	connect();
@@ -157,6 +158,7 @@ mom.ev.on("messages.upsert", async (chatUpdate) => {
   if (!m.message) return
   if (m.key && m.key.remoteJid == "status@broadcast") return
   if (m.key.id.startsWith("BAE5") && m.key.id.length == 16) return
+  console.log(m)
   //if (config.options.autoRead) await mom.readMessages([m.key])
   require("./mom")(mom, m, Commands, chatUpdate)
 })
@@ -164,6 +166,9 @@ mom.ev.on("messages.upsert", async (chatUpdate) => {
 mom.ev.on("group-participants.update", async (anu) => {
   console.log(anu)
   welcome(mom, anu)
+})
+mom.ev.on("groups.update", async (json) => {
+console.log(json)
 })
 
 mom.decodeJid = (jid) => {
