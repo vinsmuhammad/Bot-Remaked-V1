@@ -12,14 +12,11 @@ module.exports = {
     try {
       let media = await quoted.download()
       let botNumber = await mom.user.jid
-      await mom.updateProfilePicture(botNumber, media, true)
-						.then(async() =>
-            global.mess("done", m)
-						)
-	  } catch (e) {
-	    console.log(e)
-	    return global.mess("error", m)
-	  }
+      await mom.updateProfilePicture(botNumber, media, true).then(async() => global.mess("done", m))
+    } catch (e) {
+      console.log(e)
+      return global.mess("error", m)
+    }
     },
   isOwner: true
 }
