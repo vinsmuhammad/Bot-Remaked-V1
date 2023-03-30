@@ -10,13 +10,10 @@ module.exports = {
     if (/webp/.test(mime)) return m.reply(`Kirim/Reply Image Dengan Caption ${prefix + command}`)
     try {
       let media = await mom.downloadAndSaveMediaMessage(quoted)
-      await mom.updateProfilePicture(m.from, {url:media}, true)
-						.then(async() =>
-        	  m.reply(`Admin telah mengganti Icon Group!`)
-						)
-	} catch (e) {
-	  console.log(e)
-	  m.reply(`Terjadi kesalahan, coba lagi nanti.`)
+      await mom.updateProfilePicture(m.from, {url:media}, true).then(async() => m.reply(`Admin telah mengganti Icon Group!`))
+    } catch (e) {
+      console.log(e)
+      m.reply(`Terjadi kesalahan, coba lagi nanti.`)
     }
   },
   isGroup: true,
