@@ -15,7 +15,7 @@ module.exports = {
     
     for (let type of commands.type) {
       teks += `*➢${toUpper(type)} Menu 🔥*\n`
-      teks += `${commands.list[type].filter(v => v.type !== "hide").map((cmd) => `❐ ${prefix + cmd.name}`).join("\n")}\n`
+      teks += `${commands.list[type].filter(v => v.type !== "hide").map((cmd) => `|❐ ${prefix + cmd.name}`).join("\n")}\n`
       teks += `───〘COMMAND〙───\n❐.menu\n❐.owner\n`
       teks += `\n`
       teks += `\n`
