@@ -14,7 +14,7 @@ module.exports = {
     let teks = `👤 *User* : @${m.sender.split('@')[0]} 👋\n🤖 *Bot* : ${global.botName}\n🏢 *Server* : ${os.hostname}\n🖥️ *Platform* : ${os.platform}\n🔌 *Version* : v1.0.0\n⏰ *Uptime* : ${muptime(process.uptime())}\n${readmore}\n`
     
     for (let type of commands.type) {
-      teks += `*${toUpper(type)} Menu 🔥*\n`
+      teks += `*➢${toUpper(type)} Menu 🔥*\n`
       teks += `${commands.list[type].filter(v => v.type !== "hide").map((cmd) => `❐ ${prefix + cmd.name}`).join("\n")}\n`
       teks += `\n`
       teks += `\n`
