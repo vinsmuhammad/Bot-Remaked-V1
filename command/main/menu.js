@@ -5,13 +5,13 @@ const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
 
 module.exports = {
-  name: "menu", 
-  cmd: ['menu','help','?'],
+  name: "allmenu", 
+  cmd: ['allmenu','help','?'],
   category: 'main',
   start: async (mom, m, { commands, args, prefix, text, toUpper }) => {
     const { pushName, sender } = m
     
-    let teks = `👤 User : @${m.sender.split('@')[0]} 👋\n🤖 Bot : ${global.botName}\n🏢 Server : ${os.hostname}\n🖥️ Platform : ${os.platform}\n🔌 Version : v1.0.0\n⏰ Uptime : ${muptime(process.uptime())}\n${readmore}\n`
+    let teks = `👤 *User* : @${m.sender.split('@')[0]} 👋\n🤖 *Bot* : ${global.botName}\n🏢 *Server* : ${os.hostname}\n🖥️ *Platform* : ${os.platform}\n🔌 *Version* : v1.0.0\n⏰ *Uptime* : ${muptime(process.uptime())}\n${readmore}\n`
     
     for (let type of commands.type) {
       teks += `*${toUpper(type)} Menu 🎈*\n`
@@ -19,7 +19,7 @@ module.exports = {
       teks += `\n`
     }
     
-    let but = [{buttonId: `.sc`, buttonText: {displayText: 'Script 📚'}, type: 1}, {buttonId: `.owner`, buttonText: {displayText: 'Owner 👤'}, type: 1},]
+    let but = [{buttonId: `.menu`, buttonText: {displayText: 'menu 📚'}, type: 1}, {buttonId: `.owner`, buttonText: {displayText: 'Owner 👤'}, type: 1},]
     mom.sendMessage(m.from, { image: await getBuffer(global.thumb), caption: teks, footer: global.footer, buttons: but, mentions: [m.sender]}, { quoted: m })
   }
 }
