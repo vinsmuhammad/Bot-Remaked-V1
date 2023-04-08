@@ -16,8 +16,9 @@ module.exports = {
     for (let type of commands.type) {
       teks += `*➢${toUpper(type)} Menu 🔥*\n`
       teks += `${commands.list[type].filter(v => v.type !== "hide").map((cmd) => `❐ ${prefix + cmd.name}`).join("\n")}\n`
-      teks += `\n`
-      teks += `\n`
+      teks += `───〘COMMAND〙───\n`
+      teks += `.menu\n`
+      teks += `.owner\n`
     }
     
     let but = [{buttonId: `.menu`, buttonText: {displayText: 'menu 📚'}, type: 1}, {buttonId: `.owner`, buttonText: {displayText: 'Owner 👤'}, type: 1},]
