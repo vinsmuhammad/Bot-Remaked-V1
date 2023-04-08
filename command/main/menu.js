@@ -10,9 +10,9 @@ const readmore = more.repeat(4001)
 
 module.exports = {
 
-  name: "allmenu", 
+  name: "menu", 
 
-  cmd: ['allmenu','help','?'],
+  cmd: ['menu'],
 
   category: 'main',
 
@@ -32,7 +32,7 @@ module.exports = {
 
    //   teks += `${commands.list[type].filter(v => v.type !== "hide").map((cmd) => `|❐ ${prefix + cmd.name}`).join("\n")}\n`
 
-      teks += `───〘 *Menu* 〙───\n|❐.menu\n|❐.owner\n|❐.donasi\n|❐.welcome [on/off]\n`
+      teks += `───〘 *Menu* 〙───\n|❐.allmenu\n|❐.owner\n|❐.donasi\n|❐.welcome [on/off]\n`
 
       teks += `\n`
 
