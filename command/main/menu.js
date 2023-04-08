@@ -32,7 +32,7 @@ module.exports = {
 
    //   teks += `${commands.list[type].filter(v => v.type !== "hide").map((cmd) => `|❐ ${prefix + cmd.name}`).join("\n")}\n`
 
-      teks += `───〘COMMAND〙───\n|❐.menu\n|❐.owner\n|❐.donasi\n|❐.welcome [on/off]\n`
+      teks += `───〘 *Menu* 〙───\n|❐.menu\n|❐.owner\n|❐.donasi\n|❐.welcome [on/off]\n`
 
       teks += `\n`
 
