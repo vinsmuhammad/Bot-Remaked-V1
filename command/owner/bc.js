@@ -16,7 +16,7 @@ module.exports = {
       if (/image/.test(mime)) {
         await sleep(1500)
         var txtbc = `*Broadcast ${mom.user.name}*\n\n*✉️ Message :* ${q? q : ''}\n`
-        var btnbc = [{ buttonId: `y`, buttonText: { displayText: `${global.ownerName}` }, type: 1 }]
+       // var btnbc = [{ buttonId: `y`, buttonText: { displayText: `${global.ownerName}` }, type: 1 }]
         let media = await mom.downloadAndSaveMediaMessage(quoted)
         let url = await TelegraPh(media)
         let urll = await getBuffer(url)
@@ -26,7 +26,7 @@ module.exports = {
       } else if (/video/.test(mime)) {
         await sleep(1500)
         var txtbc = `*Broadcast ${mom.user.name}*\n\n*✉️ Message :* ${q? q : ''}\n`
-        var btnbc = [{ buttonId: `y`, buttonText: { displayText: `${global.ownerName}` }, type: 1 }]
+      //  var btnbc = [{ buttonId: `y`, buttonText: { displayText: `${global.ownerName}` }, type: 1 }]
         let media = await mom.downloadAndSaveMediaMessage(quoted)
         let url = await TelegraPh(media)
         let urll = await getBuffer(url)
@@ -35,7 +35,7 @@ module.exports = {
       } else {
         await sleep(1500)
         var txtbc = `*Broadcast ${mom.user.name}*\n\n*✉️ Message :* ${q? q : ''}\n`
-        var btnbc = [{ buttonId: `y`, buttonText: { displayText: `${global.ownerName}` }, type: 1 }]
+      //  var btnbc = [{ buttonId: `y`, buttonText: { displayText: `${global.ownerName}` }, type: 1 }]
         mom.sendMessage(yoi, { text: txtbc, buttons: btnbc }, { quoted: fdoc })
       }
       m.reply('Sukses Broadcast')
