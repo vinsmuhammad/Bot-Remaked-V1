@@ -21,8 +21,8 @@ module.exports = {
       teks += `\n`
     }
     
-    let but = [{buttonId: `.menu`, buttonText: {displayText: 'menu 📚'}, type: 1}, {buttonId: `.owner`, buttonText: {displayText: 'Owner 👤'}, type: 1},]
-    mom.sendMessage(m.from, { image: await getBuffer(global.thumb), caption: teks, footer: global.footer, buttons: but, mentions: [m.sender]}, { quoted: m })
+   // let but = [{buttonId: `.menu`, buttonText: {displayText: 'menu 📚'}, type: 1}, {buttonId: `.owner`, buttonText: {displayText: 'Owner 👤'}, type: 1},]
+    //mom.sendMessage(m.from, { image: await getBuffer(global.thumb), caption: teks, footer: global.footer, buttons: but, mentions: [m.sender]}, { quoted: m })
   }
 }
 
