@@ -34,9 +34,9 @@ module.exports = {
 
       teks += `───〘 *Menu* 〙───\n|❐.allmenu\n|❐.owner\n|❐.donasi\n|❐.welcome [on/off]\n`
 
-      teks += `\n`
+    //  teks += `\n`
 
-      teks += `\n`
+     // teks += `\n`
 
     }
 
